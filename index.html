@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Lina</title>
+    <style>
+ .ss1 {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        .balloon {
+            width: 30px;
+            height: 70px;
+            background-color: #ff6b6b;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            bottom: -70px; /* تبدأ من أسفل الصفحة */
+            animation: float 5s ease-in infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100vh); /* تطير إلى أعلى الشاشة */
+            }
+        }
+        .footer-message{
+    position: fixed;
+    bottom: 0;
+    width: 30%;
+    background-color: red; /* تغيير لون الخلفية إلى الأحمر */
+    color: white; /* تغيير لون النص إلى الأبيض */
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-family: Arial, sans-serif;}
+.v1 {
+            color: rgb(57, 104, 107);
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('photo_٢٠٢٤-٠٥-٠٧_٠٤-٣٤-٣٥.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+        .container12{
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+        }
+        .top-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100; /* لجعل الصورة فوق جميع العناصر الأخرى */
+}
+
+.top-right-image img {
+    width: 100px; /* يمكنك تعديل الحجم حسب الحاجة */
+    height: auto;
+    margin: 10px; /* مسافة بسيطة بين الصورة وحدود الشاشة */
+}
+
+        .h1n{
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: aqua;
+            background-color: #ff69b4;
+            width: 40%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 70px;
+            color: #ff69b4;
+            margin-top: 50px;
+            font-weight: bold;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        p {
+            font-size: 24px;
+            margin: 20px auto;
+            color: #fff;
+            width: 80%;
+            line-height: 1.5;
+        }
+       
+        .images-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+      
+        .image-slot {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #ccc;
+            margin: 10px;
+            background-color: #fff;
+        }
+
+        .cake-animation {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        .message {
+            font-size: 50px;
+            color: #ff4500;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .happy-message {
+            font-size: 60px;
+            margin: 20px;
+            color: #ff69b4;
+        }
+
+        .dancing-animation img {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        .song-buttons {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        .sillawy-section {
+            margin-top: 50px;
+        }
+
+        .sillawy-section img {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .sillawy-section p {
+            font-size: 30px;
+            color: #ff4500;
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff69b4;
+            top: -10px;
+            animation: fall 5s infinite;
+        }
+
+        @keyframes fall {
+            0% { opacity: 1; transform: translateY(0) rotate(0); }
+            100% { opacity: 0; transform: translateY(800px) rotate(720deg); }
+        }
+
+        .confetti:nth-child(2) { left: 10%; animation-duration: 7s; }
+        .confetti:nth-child(3) { left: 20%; animation-duration: 4.5s; }
+        .confetti:nth-child(4) { left: 30%; animation-duration: 6s; }
+        .confetti:nth-child(5) { left: 40%; animation-duration: 3s; }
+        .confetti:nth-child(6) { left: 50%; animation-duration: 5s; }
+        .confetti:nth-child(7) { left: 60%; animation-duration: 6.5s; }
+        .confetti:nth-child(8) { left: 70%; animation-duration: 7.5s; }
+        .confetti:nth-child(9) { left: 80%; animation-duration: 4s; }
+        .confetti:nth-child(10) { left: 90%; animation-duration: 6.5s; }
+
+        /* Cake Explosion */
+        .cake-explosion {
+            display: none;
+            animation: none;
+            transition: all 0.5s ease;
+        }
+
+        .show-cake {
+            display: block;
+        }
+
+        /* Hidden images section for password */
+        .hidden-images-section {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .hidden-image-slot {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #ccc;
+            margin: 10px;
+        }
+
+        
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    width: 80%;
+    margin: auto;
+}
+
+    .container h1{
+        color: rgb(226, 43, 202);
+    }
+
+.container h1:hover{
+    color: rgb(255, 255, 255);
+}
+.container ul{
+
+    display: flex;
+}
+.container ul li{
+    margin: 20px;
+    list-style: none;
+    font-weight: bolder;
+    color: rgb(255, 0, 255);
+}
+/* 
+parent = relative
+child = absolute
+*/
+.container ul li::after{
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 30px;
+    height: 10px;
+    position: relative;
+    
+}
+.container ul li:hover{
+    color: rgb(0, 60, 255);
+}
+.container h1:hover{
+    color: brown;
+}
+
+/* end header */
+/* START CONTENT */
+.content {
+    margin: 80px 100px;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.content h1 {
+    color: greenyellow;
+}
+
+.content p {
+    font-size: 40px;
+    color: rgb(30, 255, 0);
+    font-family: sans-serif;
+    background-position: 30%;
+}
+
+.content button {
+    color: blueviolet;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="container12">
+        <img src="c:\Users\pc\Desktop\lina p3\[CITYPNG.COM]Drawing Hand On Hand Love PNG - 1116x1116.png" style="width: 300px;">
+        
+        </div>   
+             <div class="top-right-image">
+            <img src="c:\Users\pc\Desktop\lina p3\pngwing.com (2).png" alt="Top Right Image" style="width: auto;"/>
+    </div>
+    <h1><img src="owl_1f989.png"></h1>
+    <div class="fullscreen-image" id="fullscreenImage"></div>
+<header>
+    <div class="container">
+        <h1>welcome lina to your real birthday</h1>
+        <ul>
+            <h1><li>5</li></h1>
+            <h1><li>11</li></h1>
+            <h1><li>2024</li>
+        </ul></h1>
+    </div>
+   <div class="content">
+<h1>welcome</h1>
+<p>Hello, my dearest thing in the universe. I am now writing a letter to you on this site because I want to tell you that I am really,<br> really, really very proud of you in everything. And I am also, Lina, proud that I am writing all this to you.<br>
+    And I really want to tell you that I am very proud that I was able to do all this for you, and that I was able to program <br>the websites for you, and that I was able to express everything to you through this,<br> and through my words, and through the websites, and through the studies that I studied for you<br>and through the programming that I studied for you. And I really want to tell you that <br> I love you Lina but my love is not as much as I tell you about my feelings</p>
+</header>
+    <audio id="birthdaySong" controls autoplay muted>
+        <source src="happybirthday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <button onclick="document.getElementById('birthdaySong').play()">Play Happy Birthday Song</button>
+    
+    <h1>Hello Lina!</h1>
+
+   <p><h2>لينة عامله ايه كل سنة وانتي طيبة يا قلبي وعقبال سنين كتير وانتي فرحانه ومبسوطه ومحققه كل اللي نفسك فيه يا لول يعسل وكل سنة وانتي دايما معايا وجمبي
+     وكل سنة دايما ومفيش حاجه مفرقانا عن بعض انا عارف ان حرفيا في حاجات كتير حصلت خلتنا مش قريبين من بعض خصوصا فترة تالتة اعدادي ياااه ايام بس انا بحاول على قد م اقدر اعوضك عن كل اللي حصل
+    وبحاول على قد م اقدر نرجع علاقتنا زي الاول اه نعم في حاجات كتير ممكن تتغير بعدين بس انا مش فارق معايا حاجه قد م انتي فارقة معايا لاني بحبك وابا كان بتبادليني نفس الشعور ولا لا بس انا بقولك مشاعري اتجاهك
+اللي انتي المفروض عارفاه بس انا هفضل احبك وهفضل اعملك حاجات زي كده كتير وهفضل جمبك واسمعك واحكيلك لان يوم م عرفتك حسيت ان مفيش زيك ف الدنيا دي المهم احب اقولك
+ان انتي افضل شخص عرفته ف حياتي وهتفضلي وبس اسيبك مع باقي الموقع واينجويييي🥳🥳</h2></p>
+
+        <!-- Image Slots -->
+<div class="images-section">
+    <!-- الصورة 1 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-15_03-29-23.jpg" alt="صورة 1" width="100%" height="100%">
+    </div>
+    
+    <!-- الصورة 2 -->
+    <div class="image-slot">
+        <img src="photo_2024-11-04_00-50-46.jpg" alt="صورة 2" width="100%" height="100%">
+    </div>
+    
+    <!-- الصورة 3 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-08-10.jpg" alt="صورة 3" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 4 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-08-21.jpg" alt="صورة 4" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 5 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-08-29.jpg" alt="صورة 5" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 6 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-08-42.jpg" alt="صورة 6" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 7 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-08-48.jpg" alt="صورة 7" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 8 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-09-38.jpg" alt="صورة 8" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 9 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-10-00.jpg" alt="صورة 9" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 10 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-12-11.jpg" alt="صورة 10" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 11 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-15-12.jpg" alt="صورة 11" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 12 -->
+    <div class="image-slot">
+        <img src="photo_٢٠٢٤-٠٥-٠٧_٠٤-٣٤-٣٥.jpg" alt="صورة 12" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 13 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-44.jpg" alt="صورة 13" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 14 -->
+    <div class="image-slot">
+        <img src="photo_٢٠٢٤-٠٩-٢٦_٢٢-٥٢-٣١.jpg" alt="صورة 14" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 15 -->
+    
+
+    <!-- الصورة 16 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-35.jpg" alt="صورة 16" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 17 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-32.jpg" alt="صورة 17" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 18 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-27.jpg" alt="صورة 18" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 19 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-15_03-29-23.jpg" alt="صورة 19" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 20 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-17.jpg" alt="صورة 20" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 21 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-09.jpg" alt="صورة 21" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 22 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-15-12.jpg" alt="صورة 22" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 23 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-23-49.jpg" alt="صورة 23" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 24 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-23-45.jpg" alt="صورة 24" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 25 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-23-02.jpg" alt="صورة 25" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 26 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-23-20.jpg" alt="صورة 26" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 27 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_22-53-17.jpg" alt="صورة 27" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 28 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-22-43.jpg" alt="صورة 28" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 29 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-22-35.jpg" alt="صورة 29" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 30 -->
+    <div class="image-slot">
+        <img src="photo_2024-09-26_23-23-17.jpg" alt="صورة 30" width="100%" height="100%">
+    </div>
+
+    <!-- الصورة 31 -->
+    <div class="image-slot">
+        <img src="c:\Users\pc\Desktop\lina p3\photo_2024-09-26_22-53-23.jpg" alt="صورة 30" width="100%" height="100%">
+    </div>
+
+<!-- الصورة 32 -->
+<div class="image-slot">
+    <img src="photo_2024-09-26_22-54-10.jpg" alt="صورة 30" width="100%" height="100%">
+</div>
+
+<!-- الصورة 33 -->
+<div class="image-slot">
+    <img src="photo_2024-09-26_22-54-04.jpg" alt="صورة 30" width="100%" height="100%">
+</div>
+
+<!-- الصورة 34 -->
+
+
+<!-- الصورة 35 -->
+<div class="image-slot">
+    <img src="photo_2024-09-26_22-53-57.jpg" alt="صورة 30" width="100%" height="100%">
+</div>
+</div>
+    <!-- Cake Animation Trigger -->
+    <button onclick="showCake()">دوسي هنا</button>
+
+    <!-- Cake Animation -->
+    <div class="cake-animation">
+        <img id="cakeImage" src="https://media2.giphy.com/media/w2vePhiBQoDDi/giphy.gif?cid=6c09b952ag6jm94l4c66xlh8oomx86263xul3bkfyiugfckp&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g" alt="Birthday Cake" class="cake-explosion">
+    </div>
+
+    <div class="message">كل سنة وانتي طيبة يا لينة...</div>
+    <div class="happy-message">Happy 16 🥳</div>
+
+    <!-- Dancing People Animation -->
+    <h1 class="v1">الفيديوهات دي بقه من اللي انا قعدت اعمله السنة الفاتت يوم عيد ميلادك اللي فات ده وانتي مشوفتهوش ف تفاعلي معاه انه جديددد في فيديو ناقص للاسف معرفتش احطه بسبب كبر مساحته</h1>
+<video controls width="400px" height="400px" poster="photo_2024-10-10_04-36-47.jpg">
+    <source src="video_2024-10-08_22-19-44.mp4" type="video/mp4">
+</video>
+<br>
+    <video controls width="400px" height="400px" poster="photo_2024-10-10_04-36-44.jpg">
+        <source src="video_2024-10-08_22-17-33.mp4" type="video/mp4">
+    </video>
+<br>
+    <video controls width="400px" height="400px" poster="photo_2024-10-10_04-36-57.jpg">
+        <source src="video_2024-10-08_22-20-10.mp4" type="video/mp4">
+    </video>
+    <br>
+    <video controls width="400px" height="400px" poster="photo_2024-10-10_04-36-54.jpg">
+        <source src="video_2024-10-10_03-00-49.mp4" type="video/mp4">
+    </video>
+
+<br> <h1 class="h1n"> just click nextفيديوهات مش موجودة......</h1>
+    <video id="uulx"controls width="400px" height="400px">
+        <source src="VID_168770401_020851_499.mp4" type="video/mp4">
+    </video>
+    <br>
+
+
+    <!-- Song Buttons -->
+    <div class="song-buttons">
+        <button onclick="playSong('sillawy')">دوسي ياللي بتحبي سيلاوي</button>
+        <button onclick="playSong('amrDiab')">يلا بقه عمرو دياب</button>
+    </div>
+
+    <audio id="audioPlayer" controls></audio>
+
+    <!-- Sillawy Section -->
+    <div class="sillawy-section">
+        <img src="IMG_20230911_072544_377.jpg" alt="Sillawy">
+        <h1><p>بحبك اوي يا لينة</p></h1>
+    </div>
+
+    <!-- Confetti Animation -->
+    <div class="birthday-animation">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+    <!-- Hidden Images Section -->
+    <div id="hiddenImagesSection" class="hidden-images-section">
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085306_750.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085309_999.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085316_681.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085445_574.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085453_192.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085500_756.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085503_648.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085510_447.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085514_330.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\photo_٢٠٢٢-٠٨-٢٥_٠٠-٥٤-١٢.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\photo_2024-09-30_15-09-28.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20231102_085506_538.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20230911_065302_743.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\IMG_20230911_065258_432.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="c:\Users\pc\Desktop\lina p3\photo_2024-11-01_13-31-43.jpg" width="100%" height="100%"></div>
+        <div class="hidden-image-slot"><img src="photo_٢٠٢٢-٠١-١٠_٠٠-١٩-٢١.jpg" width="100%" height="100%"></div>
+       
+        
+        <!-- Add the rest of the 20 images here -->
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+        var audio = document.getElementById('birthdaySong');
+        audio.muted = false; // إلغاء كتم الصوت بعد تحميل الصفحة
+    });
+        window.addEventListener('load', function() {
+        var audio = document.getElementById('birthdaySong');
+        audio.muted = false; // إلغاء كتم الصوت بعد تحميل الصفحة
+    });
+      
+        
+        // Function to play selected song
+        function playSong(song) {
+            var audioPlayer = document.getElementById('audioPlayer');
+            if (song === 'sillawy') {
+                audioPlayer.src = 'bregaraab.Com_sylawy_ashany.mp3'; // Replace with the actual path to the song
+            } else if (song === 'amrDiab') {
+                audioPlayer.src = '09.Ella_Heya.mp3'; // Replace with the actual path to the song
+            }
+            audioPlayer.play();
+        }
+        // Cake Animation Trigger
+        function showCake() {
+            var cakeImage = document.getElementById('cakeImage');
+            cakeImage.classList.add('show-cake');
+        }
+
+        // Password check function
+        function checkPassword() {
+            var passwordInput = document.getElementById('passwordInput').value;
+            if (passwordInput === 'LY') {
+                document.getElementById('hiddenImagesSection').style.display = 'flex';
+            } else {
+                alert('كلمة السر غير صحيحة!');
+            }
+        }
+       
+    </script>
+
+    <!-- Password Input Section -->
+    <div>
+        <h3>أدخل كلمة السر لإظهار المزيد من الصور:</h3>
+        <input type="text" id="passwordInput" placeholder="أدخل كلمة السر">
+        <button onclick="checkPassword()">إرسال</button>
+    </div>
+    <h1 class="footer-message">لتكملة الفيديوهات الرجاء الضغط على next بعد م تخلصي كل حاجه
+        <a href="https://yousefxp0-h.github.io/vidl/" target="_blank">Next</a> <!-- استبدل الرابط بـ URL الذي تريده -->
+    </h1>
+</body>
+</html>
